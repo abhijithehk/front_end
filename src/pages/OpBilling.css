@@ -1,0 +1,798 @@
+/* ===== OP Billing Page Container ===== */
+.opbill-page-container {
+  min-height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2rem 1rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.opbill-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  animation: opbillSlideUp 0.6s ease-out forwards;
+  width: 100%;
+}
+
+@keyframes opbillSlideUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Header ===== */
+.opbill-header {
+  background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+  padding: 2rem;
+  color: white;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.opbill-header-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.opbill-title {
+  font-weight: 700;
+  font-size: 1.75rem;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.5px;
+}
+
+.opbill-subtitle {
+  font-weight: 400;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.opbill-header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.opbill-today-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.35rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  backdrop-filter: blur(4px);
+}
+
+/* ===== Body ===== */
+.opbill-body {
+  padding: 2.5rem;
+}
+
+.opbill-section-title {
+  font-size: 1.1rem;
+  color: #102a43;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e0e6ed;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ===== Search Box ===== */
+.opbill-search-box {
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.opbill-form-label {
+  font-weight: 500;
+  color: #334e68;
+  margin-bottom: 0.4rem;
+  font-size: 0.95rem;
+}
+
+.opbill-form-control {
+  border: 1px solid #bcccdc;
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #f8fafc;
+}
+
+.opbill-form-control:focus {
+  background-color: #ffffff;
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.1);
+  outline: none;
+}
+
+.opbill-form-control::placeholder {
+  color: #9fb3c8;
+}
+
+.opbill-form-select {
+  border: 1px solid #bcccdc;
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #f8fafc;
+  cursor: pointer;
+}
+
+.opbill-form-select:focus {
+  background-color: #ffffff;
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.1);
+  outline: none;
+}
+
+.opbill-form-group {
+  margin-bottom: 1.25rem;
+}
+
+.btn-opbill-search {
+  background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.5rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-opbill-search:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+  background: linear-gradient(135deg, #6d28d9 0%, #4c1d95 100%);
+  color: white;
+}
+
+.btn-opbill-clear {
+  border-radius: 8px;
+  padding: 0.7rem 1.25rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.opbill-search-error {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.85rem 1.25rem;
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 10px;
+  color: #9a3412;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* ===== Results Table ===== */
+.opbill-results-section {
+  animation: fadeInResults 0.4s ease-out;
+}
+
+@keyframes fadeInResults {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.opbill-results-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.opbill-results-count {
+  font-size: 0.9rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.opbill-results-count strong {
+  color: #7c3aed;
+}
+
+.opbill-table-wrapper {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.opbill-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.opbill-table thead {
+  background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+}
+
+.opbill-table thead th {
+  padding: 0.9rem 1.15rem;
+  text-align: left;
+  font-weight: 600;
+  color: #4c1d95;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #ddd6fe;
+}
+
+.opbill-table tbody tr {
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.opbill-table tbody tr:hover {
+  background: linear-gradient(135deg, #faf5ff 0%, #f5f3ff 100%);
+  transform: scale(1.002);
+}
+
+.opbill-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.opbill-table tbody td {
+  padding: 0.85rem 1.15rem;
+  color: #334e68;
+  vertical-align: middle;
+}
+
+.opbill-patient-name {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.opbill-mrn-badge {
+  display: inline-block;
+  background: #7c3aed;
+  color: white;
+  padding: 0.2rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.opbill-gender-badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.opbill-gender-badge.male {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.opbill-gender-badge.female {
+  background: #fce7f3;
+  color: #be185d;
+}
+
+.opbill-gender-badge.other {
+  background: #e0e7ff;
+  color: #4338ca;
+}
+
+.btn-opbill-select {
+  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.45rem 1rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.btn-opbill-select:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+  color: white;
+}
+
+/* ===== Billing Detail Page ===== */
+.opbill-detail-header {
+  background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+  padding: 2rem;
+  color: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.opbill-detail-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.opbill-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  padding: 0.35rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: all 0.25s ease;
+}
+
+.opbill-back-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: white;
+  transform: translateY(-1px);
+}
+
+.opbill-invoice-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.3rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  backdrop-filter: blur(4px);
+}
+
+.opbill-detail-header-center {
+  text-align: center;
+}
+
+/* Patient Info Strip */
+.opbill-patient-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+  border: 1px solid #ddd6fe;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.opbill-patient-strip-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.opbill-patient-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.opbill-patient-meta h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.opbill-patient-meta-details {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 500;
+  margin-top: 0.15rem;
+}
+
+.opbill-patient-strip-mrn {
+  background: #7c3aed;
+  color: white;
+  padding: 0.35rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* ===== Billing Items Table ===== */
+.opbill-items-table-wrapper {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 1.5rem;
+}
+
+.opbill-items-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.opbill-items-table thead {
+  background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+}
+
+.opbill-items-table thead th {
+  padding: 0.8rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #4c1d95;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #ddd6fe;
+}
+
+.opbill-items-table thead th:last-child,
+.opbill-items-table tbody td:last-child {
+  text-align: center;
+}
+
+.opbill-items-table tbody tr {
+  border-bottom: 1px solid #f1f5f9;
+  transition: background 0.15s;
+}
+
+.opbill-items-table tbody tr:hover {
+  background: #faf5ff;
+}
+
+.opbill-items-table tbody td {
+  padding: 0.7rem 1rem;
+  color: #334e68;
+}
+
+.opbill-items-table .opbill-item-select {
+  border: 1px solid #bcccdc;
+  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.9rem;
+  background: #f8fafc;
+  min-width: 180px;
+  transition: all 0.2s;
+}
+
+.opbill-items-table .opbill-item-select:focus {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+  outline: none;
+}
+
+.opbill-items-table .opbill-item-input {
+  border: 1px solid #bcccdc;
+  border-radius: 6px;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.9rem;
+  background: #f8fafc;
+  width: 70px;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.opbill-items-table .opbill-item-input:focus {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+  outline: none;
+}
+
+.opbill-item-amount {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.btn-opbill-remove-item {
+  background: none;
+  border: none;
+  color: #ef4444;
+  font-size: 1.15rem;
+  cursor: pointer;
+  padding: 0.2rem;
+  border-radius: 4px;
+  transition: all 0.15s;
+}
+
+.btn-opbill-remove-item:hover {
+  background: #fef2f2;
+  transform: scale(1.1);
+}
+
+.btn-opbill-add-item {
+  background: none;
+  border: 2px dashed #c4b5fd;
+  color: #7c3aed;
+  border-radius: 8px;
+  padding: 0.6rem 1.25rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.btn-opbill-add-item:hover {
+  background: #f5f3ff;
+  border-color: #7c3aed;
+}
+
+/* ===== Billing Summary ===== */
+.opbill-summary-card {
+  background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+  border: 1px solid #ddd6fe;
+  border-radius: 14px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.opbill-summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  font-size: 0.95rem;
+  color: #334e68;
+}
+
+.opbill-summary-row.discount-row {
+  color: #059669;
+}
+
+.opbill-summary-divider {
+  border: none;
+  border-top: 2px dashed #c4b5fd;
+  margin: 0.75rem 0;
+}
+
+.opbill-summary-row.total-row {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #4c1d95;
+  padding-top: 0.75rem;
+}
+
+.opbill-discount-input-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.opbill-discount-input {
+  border: 1px solid #c4b5fd;
+  border-radius: 6px;
+  padding: 0.3rem 0.5rem;
+  width: 80px;
+  text-align: center;
+  font-size: 0.9rem;
+  background: white;
+  transition: all 0.2s;
+}
+
+.opbill-discount-input:focus {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+  outline: none;
+}
+
+/* ===== Payment Section ===== */
+.opbill-payment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.opbill-payment-option {
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  background: white;
+}
+
+.opbill-payment-option:hover {
+  border-color: #c4b5fd;
+  background: #faf5ff;
+  transform: translateY(-2px);
+}
+
+.opbill-payment-option.active {
+  border-color: #7c3aed;
+  background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.15);
+}
+
+.opbill-payment-icon {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.opbill-payment-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #334e68;
+}
+
+/* ===== Submit Section ===== */
+.opbill-submit-wrapper {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-opbill-submit {
+  background: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.9rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.39);
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.btn-opbill-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.5);
+  background: linear-gradient(135deg, #6d28d9 0%, #4c1d95 100%);
+}
+
+.btn-opbill-submit:active {
+  transform: translateY(0);
+}
+
+.btn-opbill-draft {
+  background: white;
+  color: #7c3aed;
+  border: 2px solid #c4b5fd;
+  border-radius: 8px;
+  padding: 0.9rem 2rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-opbill-draft:hover {
+  background: #f5f3ff;
+  border-color: #7c3aed;
+  transform: translateY(-2px);
+}
+
+/* ===== Invoice Success ===== */
+.opbill-success-card {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border: 1px solid #86efac;
+  border-radius: 14px;
+  padding: 2rem;
+  text-align: center;
+  margin-top: 1.5rem;
+  animation: fadeInResults 0.4s ease-out;
+}
+
+.opbill-success-icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.opbill-success-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #065f46;
+  margin-bottom: 0.25rem;
+}
+
+.opbill-success-invoice {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #059669;
+  letter-spacing: 1px;
+}
+
+/* ===== Success Amount ===== */
+.opbill-success-amount {
+  font-size: 1.1rem;
+  color: #334e68;
+  margin-top: 0.25rem;
+}
+
+/* ===== Pagination ===== */
+.opbill-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding: 0.5rem 0.5rem 0;
+}
+
+.pagination-info {
+  font-size: 0.9rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.btn-opbill-print {
+  background: #065f46;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 1rem;
+}
+
+.btn-opbill-print:hover {
+  background: #064e3b;
+  transform: translateY(-1px);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .opbill-body {
+    padding: 1.5rem;
+  }
+  .opbill-header,
+  .opbill-detail-header {
+    padding: 1.5rem;
+  }
+  .opbill-patient-strip {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .opbill-submit-wrapper {
+    flex-direction: column;
+  }
+  .btn-opbill-submit,
+  .btn-opbill-draft {
+    width: 100%;
+    text-align: center;
+  }
+  .opbill-detail-header-top {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

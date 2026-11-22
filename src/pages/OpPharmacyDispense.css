@@ -1,0 +1,143 @@
+/* src/pages/OpPharmacyDispense.css */
+.rx-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 1rem;
+}
+
+.rx-table th {
+  background: #f1f5f9;
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #475569;
+  border-bottom: 2px solid #cbd5e1;
+}
+
+.rx-table td {
+  padding: 12px;
+  border-bottom: 1px solid #e2e8f0;
+  vertical-align: middle;
+}
+
+.rx-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+/* Specific Columns */
+.col-sno { width: 5%; text-align: center; }
+.col-name { width: 15%; font-weight: 600; color: #334e68; }
+.col-stock { width: 5%; text-align: center; font-size: 0.85rem; }
+.col-dosage { width: 10%; }
+.col-freq { width: 10%; }
+.col-days { width: 8%; }
+.col-qty { width: 8%; text-align: center; }
+.col-instr { width: 14%; color: #64748b; font-size: 0.9rem; }
+.col-unit { width: 8%; text-align: right; }
+.col-total { width: 12%; text-align: right; font-weight: 700; color: #059669; }
+.col-actions { width: 8%; text-align: center; }
+
+/* Inline Add Row */
+.rx-add-row {
+  background: #f0fdfa !important;
+}
+
+.rx-add-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  outline: none;
+  font-size: 0.9rem;
+  transition: border-color 0.2s;
+}
+
+.rx-add-input:focus {
+  border-color: #0d9488;
+}
+
+.btn-rx-add {
+  background: #0d9488;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.2s;
+}
+
+.rx-qty-input {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: 700;
+  color: #0f172a;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.rx-qty-input:focus {
+  border-color: #0d9488;
+}
+
+.btn-rx-add:hover {
+  background: #0f766e;
+}
+
+.btn-rx-delete {
+  background: #fee2e2;
+  color: #dc2626;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-rx-delete:hover {
+  background: #f87171;
+  color: white;
+}
+
+/* Billing Summary Block */
+.rx-billing-summary {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.rx-billing-content {
+  width: 300px;
+}
+
+.rx-summary-line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  color: #475569;
+  font-size: 1rem;
+}
+
+.rx-summary-total {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 2px dashed #cbd5e1;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #0f172a;
+}

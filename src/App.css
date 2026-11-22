@@ -1,0 +1,46 @@
+/* This ensures the dropdown menu floats OVER the page content */
+.dropdown-menu {
+  position: absolute !important;
+  margin-top: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border: none;
+}
+
+/* Prevents the navbar from growing when the menu is open */
+.navbar {
+  height: auto;
+  min-height: 70px;
+}
+
+/* 
+  Global Layout Structure
+  These classes replace the inline styles previously found in App.jsx.
+  This is the bulletproof layout strategy:
+  1. Outer container defines viewport size and HIDES excess scroll.
+  2. The main content wrap is a flex column.
+  3. The `main` tag itself scrolls independently.
+  Because the main container handles the scroll, the Header (above it) stays permanently pinned in place automatically!
+*/
+.app-layout-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: #f0f4f8;
+}
+
+.app-main-content-wrapper {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.app-scrollable-main {
+  flex: 1;
+  min-width: 0;
+  overflow-y: auto;
+  overflow-x: auto;
+  padding: 1rem;
+}

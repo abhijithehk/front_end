@@ -1,0 +1,211 @@
+.registration-page-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.registration-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  animation: slideUp 0.6s ease-out forwards;
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-header-custom {
+  background: linear-gradient(135deg, #0052cc 0%, #003d99 100%);
+  padding: 2.5rem 2rem;
+  color: white;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.card-header-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+  animation: pulseIcon 2s infinite ease-in-out;
+}
+
+@keyframes pulseIcon {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.card-title-custom {
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.5px;
+}
+
+.card-subtitle-custom {
+  font-weight: 400;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.form-section-title {
+  font-size: 1.15rem;
+  color: #102a43;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e0e6ed;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.registration-body {
+  padding: 3rem;
+}
+
+.custom-form-group {
+  margin-bottom: 1.5rem;
+}
+
+.custom-form-label {
+  font-weight: 500;
+  color: #334e68;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.custom-form-control {
+  border: 1px solid #bcccdc;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #f8fafc;
+}
+
+.custom-form-control:focus {
+  background-color: #ffffff;
+  border-color: #0052cc;
+  box-shadow: 0 0 0 4px rgba(0, 82, 204, 0.1);
+  outline: none;
+}
+
+.custom-form-control.is-invalid,
+.custom-form-select.is-invalid {
+  border-color: #e53e3e !important;
+  background-color: #fffaf0 !important;
+  box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.15) !important;
+}
+
+.custom-form-control.is-invalid:focus,
+.custom-form-select.is-invalid:focus {
+  box-shadow: 0 0 0 4px rgba(229, 62, 62, 0.25) !important;
+}
+
+.invalid-feedback {
+  font-size: 0.825rem;
+  font-weight: 500;
+  color: #e53e3e;
+  margin-top: 0.35rem;
+  display: block;
+}
+
+.custom-form-control::placeholder {
+  color: #9fb3c8;
+}
+
+.custom-form-select {
+  border: 1px solid #bcccdc;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: #f8fafc;
+  cursor: pointer;
+}
+
+.custom-form-select:focus {
+  background-color: #ffffff;
+  border-color: #0052cc;
+  box-shadow: 0 0 0 4px rgba(0, 82, 204, 0.1);
+  outline: none;
+}
+
+.submit-btn-wrapper {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.btn-clear-form {
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.btn-clear-form:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+  border-color: #94a3b8;
+  transform: translateY(-2px);
+}
+
+.btn-register {
+  background: linear-gradient(135deg, #0052cc 0%, #003d99 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 1rem 2.5rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px 0 rgba(0, 82, 204, 0.39);
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.btn-register:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 82, 204, 0.5);
+  background: linear-gradient(135deg, #003d99 0%, #002966 100%);
+  color: white;
+}
+
+.btn-register:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 82, 204, 0.3);
+}
+
+@media (max-width: 768px) {
+  .registration-body {
+    padding: 2rem 1.5rem;
+  }
+  .card-header-custom {
+    padding: 2rem 1.5rem;
+  }
+}

@@ -1,0 +1,412 @@
+/* ===== InPatient Page ===================================================== */
+.ipd-page-container {
+  min-height: 100%;
+  padding: 2rem 1.5rem;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.ipd-card {
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  animation: ipdSlideUp 0.5s ease-out forwards;
+}
+
+@keyframes ipdSlideUp {
+  0%   { opacity: 0; transform: translateY(24px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Header ── */
+.ipd-header {
+  background: linear-gradient(135deg, #0f4c81 0%, #1a6faf 50%, #1e88e5 100%);
+  padding: 2rem;
+  color: white;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.ipd-header-icon {
+  font-size: 2.5rem;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.ipd-title {
+  font-weight: 700;
+  font-size: 1.75rem;
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.5px;
+}
+
+.ipd-subtitle {
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+.ipd-header-badges {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+}
+
+.ipd-badge-pill {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.18);
+  padding: 0.35rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  backdrop-filter: blur(4px);
+}
+
+/* ── Body ── */
+.ipd-body {
+  padding: 2rem 2.5rem 2.5rem;
+}
+
+.ipd-section-title {
+  font-size: 1.05rem;
+  color: #102a43;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e0e6ed;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ipd-results-badge {
+  margin-left: auto;
+  background: #e0f2fe;
+  color: #0369a1;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.2rem 0.65rem;
+  border-radius: 20px;
+  letter-spacing: 0.3px;
+}
+
+/* ── Ward Selector Dropdown ── */
+.ipd-ward-select-wrapper {
+  margin-bottom: 1rem;
+}
+
+.ipd-form-label {
+  font-weight: 500;
+  color: #334e68;
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.ipd-ward-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ipd-ward-dropdown {
+  max-width: 320px;
+  border: 1.5px solid #93c5fd;
+  border-radius: 10px;
+  padding: 0.65rem 1rem;
+  font-size: 0.95rem;
+  color: #1e3a5f;
+  background-color: #f0f9ff;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-weight: 500;
+}
+
+.ipd-ward-dropdown:focus {
+  border-color: #1e88e5;
+  box-shadow: 0 0 0 4px rgba(30, 136, 229, 0.12);
+  outline: none;
+  background: #fff;
+}
+
+/* ── Ward Quick Pills ── */
+.ipd-ward-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-bottom: 0.5rem;
+}
+
+.ipd-ward-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 20px;
+  border: 1.5px solid #d1d5db;
+  background: #f9fafb;
+  color: #4b5563;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.ipd-ward-pill:hover {
+  border-color: #1e88e5;
+  background: #e0f2fe;
+  color: #0369a1;
+  transform: translateY(-1px);
+}
+
+.ipd-ward-pill.active {
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.ipd-pill-icon {
+  font-size: 1rem;
+}
+
+.ipd-pill-count {
+  display: inline-block;
+  background: #d1d5db;
+  color: white;
+  border-radius: 20px;
+  padding: 0.05rem 0.45rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  min-width: 20px;
+  text-align: center;
+  transition: background 0.2s;
+}
+
+/* ── Search Box ── */
+.ipd-search-box {
+  background: linear-gradient(135deg, #f8fafc 0%, #f0f9ff 100%);
+  border: 1px solid #bae6fd;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.ipd-form-group {
+  margin-bottom: 0;
+}
+
+.ipd-form-select,
+.ipd-form-control {
+  border: 1px solid #bae6fd;
+  border-radius: 8px;
+  padding: 0.65rem 1rem;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  background-color: #f8fafc;
+}
+
+.ipd-form-select:focus,
+.ipd-form-control:focus {
+  background-color: #ffffff;
+  border-color: #1e88e5;
+  box-shadow: 0 0 0 4px rgba(30, 136, 229, 0.12);
+  outline: none;
+}
+
+.ipd-form-control::placeholder {
+  color: #9fb3c8;
+}
+
+.btn-ipd-clear {
+  border-radius: 8px;
+  padding: 0.65rem 1.25rem;
+  font-weight: 500;
+  white-space: nowrap;
+  border-color: #93c5fd;
+  color: #0369a1;
+}
+
+.btn-ipd-clear:hover {
+  background: #e0f2fe;
+  border-color: #1e88e5;
+  color: #0369a1;
+}
+
+/* ── Patient Table ── */
+.ipd-table-wrapper {
+  border-radius: 12px;
+  overflow: auto;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  animation: fadeIn 0.35s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.ipd-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  min-width: 960px;
+}
+
+.ipd-table thead {
+  background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+}
+
+.ipd-table thead th {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #0369a1;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #7dd3fc;
+  white-space: nowrap;
+}
+
+.ipd-table tbody tr {
+  border-bottom: 1px solid #f1f5f9;
+  transition: background 0.15s ease;
+}
+
+.ipd-table tbody tr:hover {
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+}
+
+.ipd-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.ipd-table tbody td {
+  padding: 0.8rem 1rem;
+  color: #334e68;
+  vertical-align: middle;
+}
+
+/* ── Badges ── */
+.ipd-mrn-badge {
+  display: inline-block;
+  background: #1e88e5;
+  color: white;
+  padding: 0.2rem 0.65rem;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.ipd-patient-name {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.ipd-gender-badge {
+  display: inline-block;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+.ipd-gender-badge.male   { background: #dbeafe; color: #1d4ed8; }
+.ipd-gender-badge.female { background: #fce7f3; color: #be185d; }
+.ipd-gender-badge.other  { background: #e0e7ff; color: #4338ca; }
+
+.ipd-ward-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.ipd-bed-badge {
+  display: inline-block;
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: 'Courier New', monospace;
+}
+
+.ipd-days-badge {
+  display: inline-block;
+  background: #fff7ed;
+  color: #c2410c;
+  border: 1px solid #fed7aa;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.ipd-status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.ipd-diagnosis {
+  max-width: 150px;
+  font-size: 0.875rem;
+  color: #475569;
+}
+
+/* ── Action Buttons ── */
+.ipd-action-group {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.btn-ipd-action {
+  background: none;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+.btn-ipd-action:hover { transform: translateY(-2px); box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+.btn-ipd-action.view:hover     { background: #e0f2fe; border-color: #38bdf8; }
+.btn-ipd-action.notes:hover    { background: #fef9c3; border-color: #fbbf24; }
+.btn-ipd-action.discharge:hover{ background: #f0fdf4; border-color: #4ade80; }
+
+/* ── Empty State ── */
+.ipd-empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #64748b;
+}
+.ipd-empty-state p {
+  margin-top: 0.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .ipd-body { padding: 1.5rem; }
+  .ipd-header { padding: 1.5rem; }
+  .ipd-ward-pills { gap: 0.4rem; }
+  .ipd-pill-label { display: none; }
+  .ipd-ward-dropdown { max-width: 100%; }
+}
